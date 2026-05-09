@@ -92,19 +92,24 @@ if __name__ == '__main__':
     while True:
         print("欢迎使用系统")
         choice = int(input("请输入操作"))
-        match choice:
-            case 1:
-                mangement1.add_student()
-            case 2:
-                mangement1.edit_student()
-            case 3:
-                mangement1.remove_student()
-            case 4:
-                mangement1.find_student()
-            case 5:
-                mangement1.show_student()
-            case 6:
-                print("bye~")
-                break
-            case _:
-                print("非法操作")
+        try:
+            match choice:
+                case 1:
+                    mangement1.add_student()
+                case 2:
+                    mangement1.edit_student()
+                case 3:
+                    mangement1.remove_student()
+                case 4:
+                    mangement1.find_student()
+                case 5:
+                    mangement1.show_student()
+                case 6:
+                    print("bye~")
+                    break
+                case _:
+                    print("非法操作")
+        except ValueError:
+            print("输入数据有问题")
+        except Exception:
+            print("程序问题")
